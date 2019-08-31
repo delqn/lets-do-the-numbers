@@ -9,3 +9,4 @@ screenlog.*
 *.pyc
 __pycache__
 .idea
+*.tsv
