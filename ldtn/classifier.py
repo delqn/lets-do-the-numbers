@@ -1,12 +1,10 @@
-from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
-def fit(x_train, y_train, predictors, bow_vector, tokenizer):
-    classifier = LogisticRegression()
+def fit(x_train, y_train, predictors, bow_vector, tokenizer, classifier):
     pipe = Pipeline([
         ('cleaner', predictors()),
         ('vectorizer', bow_vector(tokenizer)),
         ('classifier', classifier),
     ])
-    pipe.fit(x_train, y_train)
-    return pipe
+    return pipe.fit(x_train, y_train)
+

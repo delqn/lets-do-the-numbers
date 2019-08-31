@@ -9,3 +9,6 @@ class Predictors(TransformerMixin):
 
 def clean_text(text):
     return text.strip().lower()
+
+def predict(model, x_test):
+    return model.predict(x_test)
