@@ -1,0 +1,11 @@
+.venv
+*~
+.ipynb_checkpoints
+screenlog.*
+.env
+*\#*
+.ssh
+*.tgz
+*.pyc
+__pycache__
+.idea
