@@ -46,3 +46,7 @@ azure-status:
 clean:
 	$(shell find . -name '*~' -delete)
 	$(shell find . -name '*\#*' -delete)
+
+.PHONY: test
+test: clean
+	python3 ./test.py

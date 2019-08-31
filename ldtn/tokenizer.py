@@ -6,11 +6,19 @@ from spacy.lang.en import English
 
 punctuations = string.punctuation
 nlp = spacy.load('en')
-stop_words = spacy.lang.en.stop_words.STOP_WORDS
+
+# Load English tokenizer, tagger, parser, NER and word vectors
 parser = English()
+
+def lemma(sentence):
+    for word in parser(sentence):
+        if word.lemma_ == "-PRON-":
+            yield word.lower_
+        else:
+            yield word.lemma_.lower().strip()
+
 def tokenizer(sentence):
-    lemmai = (word.lemma_.lower().strip() if word.lemma_ != "-PRON-" else word.lower_ for word in parser(sentence))
-    for word in lemmai:
-        if word in stop_words or word in punctuations:
+    for word in lemma(sentence):
+        if word in STOP_WORDS or word in punctuations:
             continue
         yield word

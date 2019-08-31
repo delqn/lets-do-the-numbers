@@ -1,4 +1,4 @@
-from .tokenizer import tokenizer
+from .tokenizer import tokenizer, lemma
 from .vectorize import bow_vector
 from .data import split
 from .measure import evaluate
