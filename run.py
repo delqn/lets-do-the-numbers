@@ -10,5 +10,10 @@ train_test = split(
 
 print(
     stats(
-        train_test, Predictors, bow_vector, classifier, fit, tokenizer
+        train_test,
+        Predictors,
+        bow_vector,
+        classifier,
+        fit,
+        tokenizer,
     ))
