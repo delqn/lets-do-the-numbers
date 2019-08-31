@@ -4,11 +4,10 @@ SHELL:=bash
 
 .PHONY: prereqs
 prereqs:
-	doas pkg_add -u python-3.6 py3-virtualenv-16 py3-pip
+	doas pkg_add -u python-3.6 py3-virtualenv-16 py3-pip || true
 	pip3 install virtualenv
 	virtualenv .venv
-	source generative/bin/activate
-	pip3 install -r requirements.pip3
+	$(shell source .venv/bin/activate && pip3 install -r requirements.pip)
 
 .PHONY: run
 run:
